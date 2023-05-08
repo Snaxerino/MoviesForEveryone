@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="frontend/assets/css/output.css">
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/082fcabe62.js" crossorigin="anonymous"></script>
+</head>
+<body class="font-Satoshi bg-white dark:bg-zinc-800" onload="autoFocus()">
+    <!-- Container -->
+    <div class="flex flex-row h-screen">
+        <!-- Intro -->
+        <div class="hidden w-2/5 bg-gray-300 dark:bg-gray-200 md:flex relative">
+            <!-- Marca -->
+            <div class="flex items-center absolute top-16 left-8">
+                <i class="fa-solid fa-film text-blue-500 text-4xl dark:text-blue-500 pr-2"></i>
+                <h3 class="text-blue-500 text-xl pr-1 dark:text-blue-500 font-bold">MoviesForEveryone</h3>
+            </div>
+
+            <!-- Componente 1 -->
+            <div class="rounded-xl h-auto w-auto bg-white absolute top-48 left-[15%] p-4 drop-shadow-lg z-10">
+                <i class="fa-solid fa-film text-blue-500 text-3xl dark:text-blue-500"></i>
+                <p class="font-medium md:text-sm">Filmes Disponiveis</p>
+                <p class="text-blue-500 text-2xl dark:text-blue-500 font-bold">1749</p>
+            </div>
+            <!-- Componente 2 -->
+            <div class="rounded-xl h-auto w-auto bg-white absolute top-96 left-[15%] p-4 drop-shadow-lg">
+                <div class="flex flex-col">
+                    <div class="h-10 w-10 bg-blue-500 flex justify-center items-center text-white rounded-full self-center mb-1">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <p class="font-medium ">Adicionar Filme</p>
+                    <p></p>
+                </div>
+            </div>
+
+            <!-- Componente 3 -->
+            <div class="rounded-xl h-auto w-auto bg-white absolute top-[17rem] left-[40%] p-4 drop-shadow-lg z-20">
+                <div class="flex flex-col items-center">
+                    <table>
+                        <tr>
+                          <th>Capa</th>
+                          <th>Nome</th>
+                          <th>Ano</th>
+                        </tr>
+                        <tr>
+                          <td><div class="h-8 w-8 bg-blue-500 rounded"></div></td>
+                          <td>Fast X</td>
+                          <td>2023</td>
+                        </tr>
+                        <tr>
+                          <td><div class="h-8 w-8 bg-black rounded"></div></td>
+                          <td>Avatar</td>
+                          <td>2009</td>
+                        </tr>
+                      </table>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="absolute bottom-12 left-8">
+                <h2 class="text-2xl font-medium text-blue-500 dark:text-blue-500">Bem-vindo de Volta!</h2>
+                <p class="font-medium text-slate-500 dark:text-gray-500">Faz login para acederes à tua conta. </p>
+            </div>
+        </div>
+        <!-- Zona de Login -->
+        <div class="w-full md:w-3/5 m-auto text-center px-8 md:px-12 lg:px-28">
+            <!-- Mudar tema -->
+            <button class="absolute top-0 right-0 hover:bg-azul-com-opacidade rounded-md duration-200 px-3 py-2 m-2 block dark:hidden mr-4">
+                <i class="fa-solid fa-moon fa-lg text-slate-400"></i>
+            </button>
+            <button class="absolute top-0 right-0 hover:bg-preto-com-opacidade rounded-md duration-200 px-3 py-2 m-2 hidden dark:block mr-4">
+                <i class="fa-solid fa-sun fa-lg text-slate-200"></i>
+            </button>
+            <!-- Logótipo e Zona com texto -->
+            <i class="fa-solid fa-film text-blue-500 text-5xl pr-1 dark:text-blue-500 pb-4"></i>
+            <h2 class="text-2xl font-medium text-slate-600 dark:text-slate-200 pb-3">Bem-vindo de Volta!</h2>
+            <p class="font-medium text-slate-500 dark:text-gray-400 pb-9 px-12">Faz login para acederes à tua conta e veres todos os filmes que temos para ti. </p>
+            <!-- Página de login -->
+            <form name="loginUser" action="/" class="flex flex-col m-auto">
+                <!-- Utilizador -->
+                <div class="flex flex-col ">
+                    <label for="utilizador" class="flex flex-row justify-between items-center border border-slate-400 dark:border-gray-400 rounded-md py-2 px-3 mb-1 cursor-pointer">
+                        <input id="utilizador" 
+                                class="bg-transparent border-0 outline-none caret-slate-400 text-slate-400 dark:text-gray-400 placeholder:text-slate-500 placeholder:dark:text-gray-400 cursor-pointer w-full" type="text" name="utilizador" 
+                                id="utilizador" 
+                                placeholder="Utilizador">
+                        <i class="fa-solid fa-user text-slate-400 dark:text-gray-400 ml-4"></i>
+                    </label>
+                </div>
+                <!-- Password -->
+                <label for="password" class="flex flex-row justify-between items-center border border-slate-400 dark:border-gray-400 rounded-md py-2 px-3 mt-5 cursor-pointer">
+                    <input class="bg-transparent border-0 outline-none caret-slate-400 text-slate-400 dark:text-gray-400 placeholder:text-slate-500 placeholder:dark:text-gray-400 cursor-pointer w-full" 
+                            type="password" 
+                            name="password" 
+                            id="password" 
+                            placeholder="Password">
+                    <i class="fa-solid fa-eye-slash text-slate-400 dark:text-gray-400 ml-3" onclick="showHidePassword()"></i>
+                </label>
+                <!-- Guardar Password ou Recuperar Password -->
+                <div class="flex justify-between mb-8 pt-1">
+                    <label for="guardar_password" class="text-slate-500 dark:text-gray-400 flex items-center cursor-pointer">
+                        <input class="mr-1 border-slate-400 dark:border-gray-400 accent-transparent dark:accent-transparent cursor-pointer" 
+                                type="checkbox" 
+                                name="guardar_password" 
+                                id="guardar_password">
+                        <p class="text-sm md:text-base">Guardar Password</p>
+                    </label>
+                    <a href="#" class="text-blue-500 font-medium text-sm md:text-base">Recuperar password</a>
+                </div>
+                <!-- Fazer Login -->
+                <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-slate-200 duration-200 font-semibold py-2 rounded-md mb-2 cursor-pointer">Login</button>
+                <p>Ainda não tens conta? <a href="frontend/signup.html" class="text-blue-500 underline">Sign Up!</a></p>
+            </form>
+        </div>
+    </div>
+    <script src="frontend/assets/js/saveTheme.js"></script>
+    <script src="frontend/assets/js/autoFocus.js"></script>
+</body>
+</html>
+
+--------------------------------------
+
+// const signupUtilizador = document.getElementById("signupUtilizador");
+// const utilizador = document.getElementById("utilizador");
+// const email = document.getElementById("email");
+// const password = document.getElementById("password");
+// const password2 = document.getElementById("password2");
+
+// signupUtilizador.addEventListener('submit', e => {
+//     e.preventDefault();
+
+//     validarInputs();
+// });
+
+// const definirErro = (element, mensagem) => {
+//     const controlarInput = element.ParentElement;
+//     const mostrarErro = controlarInput.querySelector(".erro");
+
+//     mostrarErro.innerText = mensagem;
+//     controlarInput.classList.add("erro");
+//     controlarInput.classList.remove("sucesso");
+// }
+
+// const definirSucesso = element => {
+//     const controlarInput = element.ParentElement;
+//     const mostrarErro = controlarInput.querySelector(".sucesso");
+
+//     mostrarErro.innerText = '';
+//     controlarInput.classList.remove("sucesso");
+//     controlarInput.classList.add("erro");
+// }
+
+// const emailValido = email => {
+//     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+//     return re.test(String(email).toLowerCase());
+// }
+
+// const validarInputs = () => {
+//     const valorUtilizador = utilizador.ariaValueMax.trim();
+//     const valorEmail = email.ariaValueMax.trim();
+//     const valorPassword = password.ariaValueMax.trim();
+//     const valorPassword2 = password2.ariaValueMax.trim();
+
+//     if(valorUtilizador === '') {
+//         definirErro(utilizador, "É necessário colocar um nome para utilizador!");
+//     } else {
+//         definirSucesso(utilizador);
+//     }
+
+//     if(valorEmail === '') {
+//         definirErro(email, "É necessário colocar um email!");
+//     } else if (!emailValido(valorEmail)){
+//         definirErro(email, "Coloque um email válido!");
+//     } else {
+//         definirSucesso(email);
+//     }
+
+//     if(valorPassword === '') {
+//         definirErro(password, "É necessário colocar uma palavra passe!");
+//     } else if (password.length < 8) {
+//         definirErro(password, "A password deve ter pelo menos 8 caracteres!");
+//     } else {
+//         definirSucesso(password);
+//     }
+
+//     if(valorPassword2 === '') {
+//         definirErro(password2, "Por favor confirme a sua password!");
+//     } else if (valorPassword2 !== valorPassword) {
+//         definirErro(password2, "A password não corresponde!");
+//     } else {
+//         definirSucesso(password2 );
+//     }
+// }
+
+-----------------------------------------------------------------------------------------------------
+
+<table class="borderr rounded">
+                    <thead class="border">
+                        <tr class="border w-auto [&th]:text-slate-600 [&th]:dark:text-slate-200">
+                            <th>Id</th>
+                            <th>Titulo</th>
+                            <th>Sinopse</th>
+                            <th>Ano</th>
+                            <th>Duração</th>
+                            <th>Género</th>
+                            <th>Id</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                            $sql = "SELECT * FROM filme";
+                            $result = $mysqli->query($sql);
+                            if ($result->num_rows > 0) {
+                                // Exibe cada linha da tabela filmes
+                                while($row = $result->fetch_assoc()) {
+                                    echo "<tr class='border [&>td]:text-slate-600 [&>td]:dark:text-slate-200 [&>td]:border even:bg-gray-400 odd:bg-gray-500 [&>td]:text-center'>";
+                                    echo "<td>" . $row["id"] . "</td>";
+                                    echo "<td>" . $row["titulo"] . "</td>";
+                                    echo "<td>" . $row["sinopse"] . "</td>";
+                                    echo "<td>" . $row["ano_lançamento"] . "</td>";
+                                    echo "<td>" . $row["duração"] . "</td>";
+                                    echo "<td>" . $row["género"] . "</td>";
+                                    echo "<td>" . $row["estudio_id"] . "</td>";
+                                    echo "<td class='text-slate-600 dark:text-slate-200 flex items-center'><i class='fa-solid fa-pen-to-square self-center px-2'></i><i class='fa-solid fa-trash-can self-center px-2'></i></td>";
+                                    echo "</tr>";
+                                }
+                            } else {
+                                // Caso a consulta não tenha retornado nenhuma linha
+                                echo "<tr><td colspan='5'>Nenhum resultado encontrado.</td></tr>";
+                            }
+                            $mysqli->close();
+                        ?>
+                    </tbody>
+                </table>    
+
+---------------------------------------------------------------------------------------------------
+
+<form method="POST" class="flex flex-col m-auto">
+                    <!-- Título -->
+                    <div class="flex flex-col">
+                        <label for="titulo" class="text-slate-400 dark:text-slate-400">Título</label>
+                        <input type="text" name="price" id="price" class="w-full outline-none bg-transparent rounded-md py-1.5 pl-4 text-slate-400 dark:text-slate-400 placeholder:text-slate-400 border border-slate-400 dark:border-gray-400 cursor-pointer mb-4" placeholder="Titulo...">
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="titulo" class="text-slate-400 dark:text-slate-400">Título</label>
+                        <input type="text" name="price" id="price" class="w-full outline-none bg-transparent rounded-md py-1.5 pl-4 text-slate-400 dark:text-slate-400 placeholder:text-slate-400 border border-slate-400 dark:border-gray-400 cursor-pointer mb-4" placeholder="Titulo...">
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="titulo" class="text-slate-400 dark:text-slate-400">Título</label>
+                        <input type="text" name="price" id="price" class="w-full outline-none bg-transparent rounded-md py-1.5 pl-4 text-slate-400 dark:text-slate-400 placeholder:text-slate-400 border border-slate-400 dark:border-gray-400 cursor-pointer mb-4" placeholder="Titulo...">
+                    </div>
+
+                    <!-- <label for="titulo" class="flex flex-row justify-between items-center border border-slate-400 dark:border-gray-400 rounded-md py-2 px-3 my-4 cursor-pointer">Nome</label>
+                        <input id="titulo" class="bg-transparent border-0 outline-none caret-slate-400 text-slate-400 dark:text-slate-400 placeholder:text-slate-500 placeholder:dark:text-gray-400 cursor-pointer w-full" type="text" name="titulo"    placeholder="Titulo"> -->
+                    <!-- Fazer Login -->
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-slate-200 duration-200 font-semibold py-2 rounded-md mb-2 cursor-pointer">Login</button>
+                    <button class="w-full border border-slate-500 dark:border-gray-300 text-slate-600 dark:text-gray-300 hover:dark:text-slate-600 hover:bg-slate-500 hover:text-white dark:hover:bg-gray-300 font-semibold py-2 rounded-md mt-2">Voltar</button>
+                </form>

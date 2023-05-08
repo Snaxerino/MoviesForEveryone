@@ -1,0 +1,1 @@
+const logout = () => location.href = "../../backend/logout.php";
